@@ -95,6 +95,22 @@ class _PathProviderScreenState extends State<PathProviderScreen> {
   }
 
   @override
+  void initState() {
+    super.initState();
+    _requestTempDirectory();
+    _requestAppDocumentsDirectory();
+    _requestAppSupportDirectory();
+    _requestAppLibraryDirectory();
+    _requestExternalStorageDirectory();
+    _requestExternalStorageDirectories(StorageDirectory.music);
+  }
+
+  @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
